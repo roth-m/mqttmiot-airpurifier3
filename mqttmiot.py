@@ -163,6 +163,8 @@ while True:
 			# Every minute + 19s
 			if (count_idle_messages%790)==0:
 				q.put([ "fault","get_properties", [{"did":miot_did,"siid":2,"piid":1}]])
+			if (count_idle_messages%530)==0:
+				q.put([ "mode","get_properties", [{"did":miot_did,"siid":2,"piid":5}]])
 			if (count_idle_messages%850)==0:
 				q.put([ "power","get_properties", [{"did":miot_did,"siid":2,"piid":2}]])
 			if (count_idle_messages%630)==0:
