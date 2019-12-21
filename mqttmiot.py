@@ -39,7 +39,7 @@ def on_message(client, userdata, message):
 	if item == "fanspeed":
 		q.put([ "mode","set_properties", [{"did":miot_did,"siid":2,"piid":5,"value":2}]])
 		q.put([ "mode","get_properties", [{"did":miot_did,"siid":2,"piid":5}]])
-		miotvalue=int(14//(100/int(command.upper())))
+		miotvalue=int(14//(100/int(float(command.upper()))))
 		q.put([ "fanspeed","set_properties", [{"did":miot_did,"siid":10,"piid":10,"value": miotvalue}]])
 		q.put([ "fanspeed","get_properties", [{"did":miot_did,"siid":10,"piid":10}]])
 	
